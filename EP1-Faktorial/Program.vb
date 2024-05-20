@@ -12,11 +12,12 @@ Module Program
             cislo = Console.ReadLine
 
             If cislo < 0 Then
-                Console.WriteLine("Faktoriál není možný ")
+                Console.WriteLine("Faktoriál není možný")
 
             ElseIf cislo = 0 Or cislo = 1 Then
                 Console.WriteLine("Faktoriál je 1")
-
+            ElseIf cislo > 10 Then
+                Console.WriteLine("Èíslo je pøíliš velké")
             Else For x = 0 To cislo
                     soucet = soucet + x
                 Next
