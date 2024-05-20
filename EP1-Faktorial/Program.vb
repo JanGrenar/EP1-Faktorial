@@ -1,5 +1,6 @@
 Imports System
 Imports System.Net.Sockets
+Imports System.Reflection.Metadata.Ecma335
 Imports System.Security.Cryptography.X509Certificates
 
 Module Program
@@ -19,14 +20,20 @@ Module Program
             ElseIf cislo > 10 Then
                 Console.WriteLine("Èíslo je pøíliš velké")
 
-            Else For x = 0 To cislo
-                    soucet = soucet + x
-                Next
-                Console.WriteLine($"Faktoriál èísla od 0 do {cislo} je {soucet}")
+            Else Program.výpoèet(cislo)
 
             End If
         Loop
-        'loop už tu byl 
-    End Sub
 
+        End Sub
+
+    Function výpoèet(ByVal cislo As Integer)
+
+        Dim soucet As Integer
+        For x = 0 To cislo
+            soucet = soucet + x
+        Next
+        Console.WriteLine($"Faktoriál èísla od 0 do {cislo} je {soucet}")
+
+    End Function
 End Module
